@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head><meta charset="UTF-8"><title>Praktikum JavaScript</title></head>
+<body>
+  <h2> Praktikum Basic JavaScript</h2>
+  <p>Lihat hasil melalui Console </p>
+  <script>
+    // ===== SESI 2: Output, Variabel, dan Tipe Data =====
+    console.group("Sesi 2: Variabel dan Tipe Data");
+    const nama = "Alya";       // data pada modul praktikum
+    let umur = 19;
+    let nilai = 85;
+    let aktif = true;
+    const prodi = "informatic engineering"; // latihan modifikasi data awal=teknik informatika
+
+    console.log("Nama:", nama);
+    console.log("Umur:", umur);
+    console.log("Nilai:", nilai);
+    console.log("Status aktif:", aktif);
+    console.log("Tipe nilai:", typeof nilai);
+    console.log("Prodi:", prodi);
+    console.groupEnd();
+
+    // ===== SESI 3: Operator dan Perhitungan Sederhana =====
+    console.group("Sesi 3: Operator");
+    const tugas = 80;
+    const uts = 75;
+    const uas = 90; 
+    const akhir = tugas * 0.30 + uts * 0.30 + uas * 0.40;
+
+    console.log("Nilai akhir:", akhir);
+    console.log("Lulus:", akhir >= 60);
+    // Coba operator lain
+    console.log("10 + 3 =", 10 + 3);
+    console.log("10 - 3 =", 10 - 3);
+    console.log("10 * 3 =", 10 * 3);
+    console.log("10 / 3 =", 10 / 3);
+    console.log("10 % 3 =", 10 % 3);
+    console.groupEnd();
+
+    // ===== SESI 4: Percabangan if, else if, else =====
+    console.group("Sesi 4: Percabangan");
+    function tentukanKategori(n) {
+      let kategori;
+      if (n >= 85) {
+        kategori = "A";
+      } else if (n >= 70) {
+        kategori = "B";
+      } else if (n >= 60) {
+        kategori = "C";
+      } else {
+        kategori = "D";
+      }
+      return kategori;
+    }
+    // Nilai awal 78, lalu uji 92, 65, 45
+    [78, 92, 65, 45].forEach(function (n) {
+      console.log("Nilai:", n, "Kategori:", tentukanKategori(n));
+    });
+    console.groupEnd();
+
+    // ===== SESI 5: Perulangan dan Fungsi Dasar =====
+    console.group("Sesi 5: Perulangan dan Fungsi");
+    function hitungDiskon(harga, persen) {
+      return harga - (harga * persen / 100);
+    }
+
+    for (let i = 1; i <= 3; i++) {
+      const harga = i * 10000;
+      const bayar = hitungDiskon(harga, 10);
+      console.log("Barang", i, "Harga:", harga, "Bayar:", bayar);
+    }
+    console.groupEnd();
+
+    // ===== PRAKTIKUM MANDIRI: Pengolah Nilai Mahasiswa =====
+    console.group("Praktikum Mandiri");
+    const namaMahasiswa = "Zulfa Zamain"; // ini nama saya
+    const NIM = "0110226002";
+    const nilaiTugas = 80;
+    const nilaiUTS = 90;
+    const nilaiUAS = 90;
+
+    const nilaiAkhir = nilaiTugas * 0.30 + nilaiUTS * 0.30 + nilaiUAS * 0.40;
+
+    let status;
+    if (nilaiAkhir >= 60) {
+      status = "LULUS";
+    } else {
+      status = "TIDAK LULUS";
+    }
+
+    console.log("Nama mahasiswa:", namaMahasiswa);
+    console.log("NIM:", NIM);
+    console.log("Nilai akhir:", nilaiAkhir);
+    console.log("Status kelulusan:", status);
+    console.groupEnd();
+  </script>
+</body>
+</html>
